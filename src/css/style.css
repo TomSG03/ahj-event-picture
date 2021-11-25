@@ -51,9 +51,19 @@ body {
 	padding-right: 40px;
 }
 
+.line-error {
+	visibility: hidden;
+	display: flex;
+	justify-content: flex-end;	
+}
+
+.error {
+	width: 50%;
+	color: rgb(221, 79, 79);
+}
 
 .button-block {
-	margin-top: 60px;
+	margin-top: 20px;
 
 	display: flex;
 	justify-content: center;

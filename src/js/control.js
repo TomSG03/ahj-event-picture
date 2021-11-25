@@ -6,19 +6,25 @@ export default class Control {
     this.flow = new Flow(host.querySelector('[data-flow=picture]'));
     this.link = this.host.querySelectorAll('input');
     this.addButton = this.host.querySelector('[data-button=add]');
+    this.error = this.host.querySelector('[data-error=URL]');
   }
 
   createBox(linkPickture, namePicture) {
+    this.error.style.visibility = 'hidden';
     const img = document.createElement('img');
     img.src = linkPickture;
     img.alt = namePicture;
     img.title = namePicture;
     img.addEventListener('error', () => {
-      alert('Error');
+      this.showError();
     });
     img.addEventListener('load', () => {
       this.flow.addFlow(img);
     });
+  }
+
+  showError() {
+    this.error.style.visibility = 'visible';
   }
 
   start() {
