@@ -41,5 +41,12 @@ export default class Control {
 
   evenAdd() {
     this.createBox(this.link[1].value, this.link[0].value);
+    this.clearInput();
+  }
+
+  clearInput() {
+    [...this.link].forEach((e) => {
+      e.value = '';
+    });
   }
 }
