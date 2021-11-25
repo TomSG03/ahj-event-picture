@@ -19,6 +19,7 @@ export default class Control {
       this.showError();
     });
     img.addEventListener('load', () => {
+      this.clearInput();
       this.flow.addFlow(img);
     });
   }
@@ -41,7 +42,6 @@ export default class Control {
 
   evenAdd() {
     this.createBox(this.link[1].value, this.link[0].value);
-    this.clearInput();
   }
 
   clearInput() {
