@@ -1,33 +1,48 @@
-const link = document.querySelectorAll('input');
-const addButton = document.querySelector('[data-button=add]');
-const flow = document.querySelector('[data-flow=picture]');
+import Control from './control';
 
-function createBox(linkPickture, namePicture) {
-  const htmlText = `<div class="delete"></div>
-    <img src=${linkPickture} alt=${namePicture}>`;
-  const div = document.createElement('div');
-  div.classList = 'picture';
-  div.innerHTML = htmlText;
-  flow.append(div);
-}
+const galeryDom = document.getElementById('galery');
 
-function evenAdd() {
-  createBox(link[1].value, link[0].value);
-  flow.scrollLeft = flow.scrollWidth;
-}
+const galery = new Control(galeryDom);
+galery.start();
 
-link[1].addEventListener('keydown', (e) => {
-  if (e.key === 'Enter') {
-    evenAdd();
-  }
-});
+// const link = document.querySelectorAll('input');
+// const addButton = document.querySelector('[data-button=add]');
+// const flow = document.querySelector('[data-flow=picture]');
 
-addButton.addEventListener('click', () => {
-  evenAdd();
-});
+// function createBox(linkPickture, namePicture) {
+//   const img = document.createElement('img');
+//   img.src = linkPickture;
+//   img.alt = namePicture;
+//   img.addEventListener('error', () => {
+//     alert('Error');
+//   });
+//   img.addEventListener('load', () => {
+//     const htmlText = '<div class="delete"></div>';
+//     const div = document.createElement('div');
+//     div.classList = 'picture';
+//     div.innerHTML = htmlText;
+//     div.append(img);
+//     flow.append(div);
+//     flow.scrollLeft = flow.scrollWidth;
+//   });
+// }
 
-flow.addEventListener('click', (e) => {
-  if (e.target.className === 'delete') {
-    e.target.parentElement.remove();
-  }
-});
+// function evenAdd() {
+//   createBox(link[1].value, link[0].value);
+// }
+
+// link[1].addEventListener('keydown', (e) => {
+//   if (e.key === 'Enter') {
+//     evenAdd();
+//   }
+// });
+
+// addButton.addEventListener('click', () => {
+//   evenAdd();
+// });
+
+// flow.addEventListener('click', (e) => {
+//   if (e.target.className === 'delete') {
+//     e.target.parentElement.remove();
+//   }
+// });
