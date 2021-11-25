@@ -2,4 +2,4 @@
 
 ## [Домашнее задание к лекции «Обработка событий»](https://github.com/TomSG03/ahj-homeworks/tree/simplification/events)
 
-- [x] [Галерея изображений с проверкой URL]
+- [x] Галерея изображений с проверкой URL
